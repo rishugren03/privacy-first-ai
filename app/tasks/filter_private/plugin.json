@@ -1,0 +1,6 @@
+{
+  "name": "filter-private",
+  "input_type": "text",
+  "output_type": "text",
+  "description": "Redacts sensitive entities and patterns like names, emails, phone numbers from text"
+}
