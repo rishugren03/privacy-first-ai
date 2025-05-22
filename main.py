@@ -1,6 +1,17 @@
-from fastapi import FastAPI
+from fastapi import FastAPI 
+
+from app.mesh.registry import auto_register_tasks
+
+from app.mesh.router import router as mesh_router
 
 app = FastAPI()
+
+app.include_router(mesh_router)    
+
+@app.on_event("startup")
+def startup_event():
+    auto_register_tasks()
+
 
 @app.get("/")
 def read_root():
